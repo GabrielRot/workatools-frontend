@@ -1,0 +1,112 @@
+@use 'styles.scss'  as *;
+@use 'sass:color';
+
+.sign-in-container {
+
+  .sign-in-fields {
+    display: grid;
+    gap: 18px;
+  }
+
+  .forgot-password-container {
+    color: #FFFFFF;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin-top: 16px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    @extend .prevent-user-selection;
+  }
+
+  .login-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .sign-in-separator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 30px;
+
+    .sign-in-separator-text {
+      color: #FFFFFF;
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .sign-in-separator-left,.sign-in-separator-right {
+      background-color: #FFFFFF;
+      width: 100%;
+      height: 1px;
+    }
+
+    @extend .prevent-user-selection;
+  }
+
+  .social-sign-in-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    gap: 10px;
+    cursor: pointer;
+
+    .google-svg-logo-container {
+      width: 20px;
+      height: 20px;
+    }
+
+    .social-sign-in-text {
+      color: #FFFFFF;
+      font-weight: 500;
+      font-size: 15px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:active {
+        color: color.adjust(#FFFFFF, $lightness: -10%);
+      }
+    }
+
+    @extend .prevent-user-selection;
+  }
+
+  .sign-up-container {
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; 
+    margin-top: 20px;
+
+    .sign-up-create-account {
+      text-decoration: underline;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:active {
+        color: color.adjust(#FFFFFF, $lightness: -10%);
+        text-decoration: underline;
+      }
+
+      @extend .prevent-user-selection;
+    }
+  }
+}

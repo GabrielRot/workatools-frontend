@@ -1,0 +1,50 @@
+.login-input-component-container {
+  display: grid;
+  gap: 5px;
+
+  .login-label {
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .login-input-container {
+    .login-input {
+      border: none;
+      outline: none;
+      min-height: 40px;
+      width: 95%;
+      padding-left: 5%;
+      color: rgb(110, 110, 110);
+      border-radius: 6px;
+      box-shadow: 6 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all .2s ease-out;
+
+      &:not(.input-not-filled) {
+        &.active-border {
+          &:focus {
+            border-style: solid !important;
+            border-width: 1px !important;
+            border-color: transparent !important;
+            box-shadow: 0px 0px 0px 2px #06A9B5 !important;
+          }
+        }
+      }
+
+
+      &.input-not-filled {
+        background-color: #fb8f8f !important;
+        border-style: solid !important;
+        border-width: 1px !important;
+        border-color: transparent !important;
+        box-shadow: 0px 0px 0px 2px #a73434 !important;
+      }
+    }
+  }
+
+  .login-input-required-text-container {
+    color: #a73434;
+    font-size: 12px;
+  }
+}

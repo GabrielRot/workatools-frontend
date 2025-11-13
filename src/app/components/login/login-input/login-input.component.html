@@ -1,0 +1,11 @@
+<div #loginInputComponentContainer class="login-input-component-container">
+  <div class="login-label">
+    <label for="{{id}}">{{text}}</label>
+  </div>
+  <div class="login-input-container">
+    <input #loginInput [(ngModel)]="inputValue" class="login-input {{(inputBorder) ? 'active-border' : ''}}" type="{{type}}" placeholder="{{placeholder}}" name="{{name}}" id="{{id}}">
+  </div>
+  <div class="login-input-required-text-container" *ngIf="showRequiredText" id="{{id}}-required-container">
+    <span>{{text}} não informado. Por favor informe</span>
+  </div>
+</div>

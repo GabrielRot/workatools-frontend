@@ -1,0 +1,129 @@
+@use 'styles.scss' as *;
+@use "sass:color";
+
+$error-notification-color: red;
+$waring-notification-color: yellow;
+$info-notification-color: blue;
+$success-notification-color: green;
+
+.notification-container {
+  display: grid;
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 999;
+
+  .notification-contents {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 60px;
+    border-radius: 12px;
+    padding: 8px;
+
+    &.error {
+      background-color: $error-notification-color;
+    }
+
+    &.warning {
+      background-color: $waring-notification-color;
+    }
+
+    &.info {
+      background-color: $info-notification-color;
+    }
+
+    &.success {
+      background-color: $success-notification-color;
+    }
+  }
+
+  .notification {
+    .notification-button-container {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: 100%;
+      // position: absolute;
+      margin-bottom: -15px;
+
+      .notification-button {
+        border-style: none;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba($color: #000000, $alpha: 1.8);
+        border-radius: 50%;
+        color: #FFFFFF;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+
+        .fa {
+          display: flex !important;
+          margin-top: 0.5px;
+        }
+
+        &:hover {
+          background-color: rgba($color: color.adjust(#000000, $lightness: 50%), $alpha: 1);
+        }
+      }
+    }
+
+    .notification-contents {
+      display: flex;
+      gap: 12px;
+
+      .notification-icon {
+        font-size: 2.4rem;
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .notification-content {
+        display: grid;
+        gap: 6px;
+        color: #FFFFFF;
+        justify-content: start;
+        height: 100%;
+        width: 100%;
+
+        .notification-title {
+          font-weight: 600;
+          margin-bottom: auto;
+          font-size: 15px;
+        }
+      }
+
+      .notification-detail-button-container {
+        display: none;
+        align-items: center;
+        justify-content: center;
+
+        .notification-detail-button {
+          background-color: inherit;
+          color: #FFFFFF;
+          cursor: pointer;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          font-weight: 600;
+
+          &:hover {
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: #FFFFFF;
+          }
+
+          @extend .prevent-user-selection;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<div class="sign-up-container">
+  <div class="sign-up-card-container">
+    <div class="sign-up-header">
+      <div class="sign-up-title">
+        <span>Cadastrar-se</span>
+      </div>
+      <div class="sign-up-subtitle">
+        <span>Preencha as informações abaixo para criar sua conta e começe</span>
+      </div>
+    </div>
+    <div class="sign-up-fields-container">
+      <app-login-input [requiredInput]="true" [inputBorder]="true" text="Nome Completo" name="name" placeholder="digite seu nome" id="name-input" type="text"></app-login-input>
+      <app-login-input [requiredInput]="true" [inputBorder]="true" text="E-mail" name="e-mail" placeholder="exemplo@email.com" id="email-input" type="e-mail"></app-login-input>
+      <app-login-input [requiredInput]="true" [inputBorder]="true" text="Senha" name="password" placeholder="digite sua senha" id="password-input" type="password"></app-login-input>
+      <app-login-input [requiredInput]="true" [inputBorder]="true" text="Confirmar Senha" name="confirm-password" placeholder="confirme sua senha" id="confirm-password-input" type="password"></app-login-input>
+    </div>
+    <div class="sign-up-confirm-button-container">
+      <app-login-button id="confirm-sign-up" type="primary" text="Confirmar" (click)="createUser()"></app-login-button>
+    </div>
+    <div class="sign-up-already-have-account-container">
+      <div class="sign-up-already-have-account-text">
+        <span>Já possui uma conta?</span>
+      </div>
+      <div class="sign-up-already-have-account-login" (click)="redirectToLoginPage()">
+        <span>Logar</span>
+      </div>
+    </div>
+  </div>
+</div>
